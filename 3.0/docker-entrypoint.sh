@@ -12,6 +12,7 @@ originalArgOne="$1"
 if [[ "$originalArgOne" == mongo* ]] && [ "$(id -u)" = '0' ]; then
 	if [ "$originalArgOne" = 'mongod' ]; then
 		chown -R mongodb /data/configdb /data/db
+		chmod 755 /data/db
 	fi
 
 	# make sure we can write to stdout and stderr as "mongodb"
